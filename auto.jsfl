@@ -1,7 +1,7 @@
 ﻿fl.outputPanel.clear();
 fl.outputPanel.trace('*****Start!!!*****');
-fl.outputPanel.trace('项目文件路径：'+JSFL_PATH);
 var JSFL_PATH = fl.scriptURI.substr(0, fl.scriptURI.lastIndexOf("/") + 1);
+fl.outputPanel.trace('项目文件路径：'+JSFL_PATH);
 function createSwf(floder) {
 	var fl_floder = JSFL_PATH + floder + '/';
 	fl.outputPanel.trace('源文件路径: ' + fl_floder);
@@ -17,8 +17,8 @@ function createSwf(floder) {
 }
 
 if (!null) {
-	createSwf('class_1');
-	createSwf('class_2');
-	createSwf('class_3');
+	'3'.split('').forEach(function(e){
+		createSwf('class_'+e);
+	})
 	fl.outputPanel.trace('*****End!!!*****');
 }
