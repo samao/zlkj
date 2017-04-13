@@ -69,7 +69,7 @@ package
 		private function loadMenu():void
 		{
 			$.l.load('menu.swf',menuLayer);
-			$.r.warp.visible = false;
+			//$.r.warp.visible = false;
 		}
 	}
 }

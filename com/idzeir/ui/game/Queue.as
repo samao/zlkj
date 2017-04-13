@@ -15,7 +15,7 @@ package com.idzeir.ui.game
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import flash.utils.Dictionary;
-	import flash.utils.setInterval;
+	import flash.utils.setTimeout;
 	
 	public class Queue extends Module
 	{
@@ -23,6 +23,8 @@ package com.idzeir.ui.game
 		
 		private var _cMap:Array = [];
 		private var _tMap:Array = [];
+		
+		private var _hidenMap:Array = [];
 		
 		public function Queue()
 		{
@@ -44,6 +46,7 @@ package com.idzeir.ui.game
 					{
 						but.addEventListener(MouseEvent.MOUSE_DOWN,pressHandler);
 						_cMap.push(but);
+						_hidenMap.push(but);
 					}
 					if(but.name.indexOf("t_") === 0)
 					{
@@ -69,6 +72,9 @@ package com.idzeir.ui.game
 				{
 					if(but.hitTestObject(tBut) && tBut.name.indexOf(but.name) !== -1)
 					{
+						tBut.alpha = 1;
+						tBut.visible = true;
+						but.visible = false;
 						right = true;
 						_tMap.splice(_tMap.indexOf(tBut),1);
 						break;
@@ -83,7 +89,10 @@ package com.idzeir.ui.game
 					_cMap.splice(_cMap.indexOf(but),1);
 					if(_cMap.length == 0)
 					{
-						play();
+						setTimeout(function():void
+						{
+							play();
+						},100);
 					}
 				}else{
 					but.x = point.x;

@@ -17,7 +17,7 @@ function createSwf(floder) {
 }
 
 if (!null) {
-	'3'.split('').forEach(function(e){
+	'2'.split('').forEach(function(e){
 		createSwf('class_'+e);
 	})
 	fl.outputPanel.trace('*****End!!!*****');
