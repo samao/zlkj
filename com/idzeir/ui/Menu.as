@@ -35,8 +35,8 @@ package com.idzeir.ui
 						$.i.append('返回主页');
 						$.b.clear();
 						$.m.show();
-						$.r.hiden();
-						$.r.warp.visible = false;
+						//$.r.hiden();
+						//$.r.warp.visible = false;
 					}
 					continue;
 				}
